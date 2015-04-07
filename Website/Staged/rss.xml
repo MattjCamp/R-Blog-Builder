@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0">
+
+<channel>
+  <title>@MattjCamp Blog</title>
+  <link>http://mattjcamp.com</link>
+  <description>Matt Campbell's Blog and Website</description>
+  <item>
+    <title>More Code Please</title>
+    <link>http://mattjcamp.com/blog/more-code-please/</link>
+    <description>I work on a computer that has many, many apps and frameworks and plug-ins that pump and bang and grind all night and day.</description>
+  </item>
+  <item>
+    <title>The End of an Indie</title>
+    <link>http://mattjcamp.com/blog/end-of-an-indie/</link>
+    <description>In this post, I talk about why I'm shutting down Mobile App Mastery and re-joining the 9-5.</description>
+  </item>
+  <item>
+    <title>Hello World!</title>
+    <link>http://mattjcamp.com/blog/hello-world/</link>
+    <description>In this first post on the @MattjCamp blog, Matt talks about the purpose and scope of @MattjCamp.</description>
+  </item>
+</channel>
+
+</rss>
