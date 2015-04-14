@@ -1,32 +1,27 @@
 library(stringr)
 library(markdown)
 
-
 # parameters --------------------------------------------------------------
 
-# set these to point to template folders (see commented examples)
-
 #topic <- ""
-#topic <- "topics/"
-#topic <- "topics/data-visualization/"
-#topic <- "visualizations/test/"
-topic <- "visualizations/"
+topic <- "blog/"
+#topic <- "blog/test/"
 
-#template <- "topics/"
-template <- "visualizations/"
+template <- "blog/"
 
 # folder locations --------------------------------------------------------
 
-content.dir <- "C:/Users/mcampbell/Analysis/Projects/Visualizations/00-Notes/viz-note-rendering/content/"
-template.dir <- "C:/Users/mcampbell/Analysis/Projects/Visualizations/00-Notes/viz-note-rendering/template/"
-staged.dir <- "I:/Visualization/"
+content.dir <- sprintf("%s/Website/Content/", getwd())
+template.dir <- sprintf("%s/Website/Template/", getwd())
+staged.dir <- sprintf("%s/Website/Staged/", getwd())
 content.dir <- sprintf("%s%s/", content.dir, topic)
 template.dir <- sprintf("%s%s/", template.dir, template)
 staged.dir <- sprintf("%s%s/", staged.dir, topic)
 content.dir <- str_replace_all(string = content.dir, pattern = "//", replacement = "/")
 staged.dir <- str_replace_all(string = staged.dir, pattern = "//", replacement = "/")
-content.file <- sprintf("%s%s", content.dir, "readme.md")
-staged.file <- sprintf("%s%s", staged.dir, "readme.html")
+template.dir <- str_replace_all(string = template.dir, pattern = "//", replacement = "/")
+content.file <- sprintf("%s%s", content.dir, "content.md")
+staged.file <- sprintf("%s%s", staged.dir, "index.html")
 
 # functions ---------------------------------------------------------------
 
@@ -58,6 +53,6 @@ applyTemplate <- function(html, template, isMarkDown = FALSE, template.dir, repl
 index <- paste(template.dir, "index.html", sep="")
 index <- readChar(index, file.info(index)$size)
 index <- applyTemplate(index, "navigation.top", template.dir = template.dir)
-index <- applyTemplate(index, "readme", isMarkDown = TRUE, template.dir = template.dir)
+index <- applyTemplate(index, "content", isMarkDown = TRUE, template.dir = template.dir)
 
 write(index, file = staged.file)
