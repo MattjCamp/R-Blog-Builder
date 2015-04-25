@@ -10,5 +10,4 @@ source('render.R', echo=FALSE)
 # 
 # #blog posts
 # 
-# render(template = "blog/blog-post/", topic = "blog/more-code-please/")
-# 
+render(template = "blog/blog-post/", topic = "blog/test/")

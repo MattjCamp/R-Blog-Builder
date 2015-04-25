@@ -13,8 +13,8 @@ template.dir <- sprintf("%s%s/", template.dir, template)
 staged.dir <- sprintf("%s%s/", staged.dir, topic)
 content.dir <- str_replace_all(string = content.dir, pattern = "//", replacement = "/")
 staged.dir <- str_replace_all(string = staged.dir, pattern = "//", replacement = "/")
-content.file <- sprintf("%s%s", content.dir, "readme.md")
-staged.file <- sprintf("%s%s", staged.dir, "readme.html")
+content.file <- sprintf("%s%s", content.dir, "content.md")
+staged.file <- sprintf("%s%s", staged.dir, "index.html")
 
 # functions ---------------------------------------------------------------
 
@@ -41,12 +41,34 @@ applyTemplate <- function(html, template, isMarkDown = FALSE, template.dir, repl
   
 }
 
+# create supporting files and folders
+
+staged.images.dir <- sprintf("%simages/", staged.dir)
+content.images.dir <- sprintf("%simages/", content.dir)
+  
+if(!file.exists(staged.dir)) {
+  dir.create(path = staged.dir, showWarnings = TRUE)
+}
+
+if(!file.exists(staged.images.dir)) {
+  dir.create(path = staged.images.dir, showWarnings = TRUE)
+}
+
+if(file.exists(content.images.dir)){
+  file.copy(from = sprintf("%s%s", content.images.dir, list.files(path=content.images.dir)),
+            to = staged.images.dir,
+            overwrite = TRUE)
+}
+
+file.copy(from = sprintf("%s%s", template.dir, "style.css"),
+          to = sprintf("%s%s", staged.dir, "style.css"))
+
 # create page ------------------------------------------------------------------
 
 index <- paste(template.dir, "index.html", sep="")
 index <- readChar(index, file.info(index)$size)
 index <- applyTemplate(index, "navigation.top", template.dir = template.dir)
-index <- applyTemplate(index, "readme", isMarkDown = TRUE, template.dir = template.dir)
+index <- applyTemplate(index, "content", isMarkDown = TRUE, template.dir = template.dir)
 
 write(index, file = staged.file)
 
