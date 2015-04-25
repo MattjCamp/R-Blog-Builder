@@ -5,9 +5,9 @@ library(markdown)
 
 # folder locations --------------------------------------------------------
 
-content.dir <- "C:/Users/mcampbell/Analysis/Projects/Visualizations/00-Notes/viz-note-rendering/content/"
-template.dir <- "C:/Users/mcampbell/Analysis/Projects/Visualizations/00-Notes/viz-note-rendering/template/"
-staged.dir <- "I:/Visualization/"
+content.dir <- sprintf("%s/Website/Content/", getwd())
+template.dir <- sprintf("%s/Website/Template/", getwd())
+staged.dir <- sprintf("%s/Website/Staged/", getwd())
 content.dir <- sprintf("%s%s/", content.dir, topic)
 template.dir <- sprintf("%s%s/", template.dir, template)
 staged.dir <- sprintf("%s%s/", staged.dir, topic)
