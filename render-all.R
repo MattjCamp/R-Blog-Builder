@@ -4,7 +4,7 @@ source('render.R', echo=FALSE)
 # render(template = "", topic = "")
 # 
 # # second deep levels
-# render(template = "blog/", "blog/")
+render(template = "blog/", "blog/")
 # 
 # # third deep levels
 # 
