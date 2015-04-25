@@ -1,69 +1,32 @@
+<a href="Swift-Extensions/"><img id="leftimage" src="Swift-Extensions/images/pileofplussigns.jpg" width=100pt></a>
 
-TEST New Render Function
-
-<!--Blog Post Summary Start-->
+[Swift Extensions](Swift-Extensions/)
   
-  <div style="height:100pt">
-  
-  <a href="Swift-Extensions/"><img id="leftimage" src="Swift-Extensions/images/pileofplussigns.jpg" width=100pt></a><br/>
-  <strong><a href="Swift-Extensions/">Swift Extensions</a></strong><br/>
-  
-  You use extensions when you want to add methods and computed properties to a class, structure or enumeration that already exists.  This comes in handy when you want new behavior for a type, but only in a particular context.  Extensions will remind Objective-C programmers of categories.
-
-<br/>
-  </div>
-  
-  <hr/>
-  
-  <!--Blog Post Summary End-->
-  
-  
-  <!--Blog Post Summary Start-->
-  
-  <div style="height:100pt">
-  
-  <a href="more-code-please/"><img id="leftimage" src="more-code-please/images/code.jpg" width=100pt></a><br/>
-  <strong><a href="more-code-please/">More Code Please</a></strong><br/>
-  
-  I work on a computer that has many, many apps and frameworks and plug-ins that pump and bang and grind all night and day.
-
-<br/>
-  </div>
-  
-  <hr/>
-  
-  <!--Blog Post Summary End-->
-  
-  
-  <!--Blog Post Summary Start-->
-  
-  <div style="height:100pt">
-  
-  <a href="end-of-an-indie/"><img id="leftimage" src="end-of-an-indie/images/la-fin.png" width=100pt></a><br/>
-  <strong><a href="end-of-an-indie/">The End of an Indie</a></strong><br/>
-  
-  In this post, I talk about why I'm shutting down Mobile App Mastery and re-joining the 9-5. 
-<br/>
-<span style = "font-size: 85%;">[<a href="http://mattjcamp.com/blog/end-of-an-indie/#disqus_thread"></a>]
-</div>
+You use extensions when you want to add methods and computed properties to a class, structure or enumeration that already exists.  This comes in handy when you want new behavior for a type, but only in a particular context.  Extensions will remind Objective-C programmers of categories.  [MORE](Swift-Extensions/)
 
 <hr/>
 
-<!--Blog Post Summary End-->
-
-<!--Blog Post Summary Start-->
-
-<div style="height:100pt">
-
-<a href="hello-world/"><img id="leftimage" src="hello-world/images/hello-world.png" width=100pt></a><br/>
-<strong><a id="hidelink" href="hello-world/">Hello World!</a></strong><br/>
-
-In this first post on the @MattjCamp blog, Matt talks about the purpose and scope of @MattjCamp.
-<br>
-<span style = "font-size: 85%;">[<a href="http://mattjcamp.com/blog/hello-world/#disqus_thread"></a>]
-
-</div>
+<a href="more-code-please/"><img id="leftimage" src="more-code-please/images/code.jpg" width=100pt></a>
+  
+[More Code Please](more-code-please/)
+  
+I work on a computer that has many, many apps and frameworks and plug-ins that pump and bang
+and grind all night and day. It is a miracle that I can email or Tweat or talk on Skype or 
+that my clients will visit me here. There is so much code. Every few minutes my monitor blacks 
+out or the PC fan starts spinning like a meat grinder. There are too many background processes
+running.  [MORE](more-code-please/)
 
 <hr/>
 
-<!--Blog Post Summary End-->
+<a href="end-of-an-indie/"><img id="leftimage" src="end-of-an-indie/images/la-fin.png" width=100pt></a><br/>
+  
+[The End of an Indie](end-of-an-indie/)
+  
+Way back on November 25th, 2008 I left my 9-5 job as a Statistical Programmer to see if I could make it as an indie software developer. 
+
+Over the past almost six years I've had some incredible experiences and I've done things I never thought was possible in a million years. 
+
+I've published books, traveled all over the world to teach and ran an indie software business. But, like many things my business has reached the end of it's lifecycle.  [MORE](end-of-an-indie/)
+
+
+
