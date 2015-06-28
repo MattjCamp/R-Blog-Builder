@@ -25,6 +25,82 @@
 
 <h1>Why I&#39;m Writing My Own Blogging Engine</h1>
 
+<p><img id="leftimage" src="images/blog.jpg" width=200pt></p>
+
+<p>When I started an online business back in 2008, everyone told me:</p>
+
+<blockquote>
+<p>&ldquo;Don&#39;t go and try to build your own blog from scratch. Even if you know you can. Use WordPress.  Better yet, hire a <em>virtual assistant</em> and outsource your blog for only $5 an hour.&rdquo;</p>
+</blockquote>
+
+<p>Their point was: don&#39;t let yourself get distracted over trivial details that will keep you from focusing on the goal which was building a business. Not building websites.</p>
+
+<p>So while I was running my businesses (first App Shop and then Mobile App Mastery), that is exactly what I did. For the most part it worked.  My websites ran on WordPress, I could sell training and charge clients and I was even SEO friendly without having to do much about it myself.</p>
+
+<h2>Wait, Isn&#39;t this Article About Rolling Your Own Blog Engine?</h2>
+
+<p>Yes, and I&#39;ll get to that.</p>
+
+<p>Here&#39;s the problem with the business guru&#39;s advice. It sucks when you find out that your $5/hour VA doesn&#39;t know anything about building websites outside of using your web host self-service tool that builds websites. It sucks worse when you want to customize your website and find out that those high end $15, $30 and even $50 per hours VA can&#39;t help much.</p>
+
+<p>It really sucks once you do take a look at customizing something like WordPress and realize that you need to suddenly learn <strong>PHP, MySQL, HTML, CSS, XML, WordPress API, Plug-ins</strong> to do any significant work. No wonder those VAs weren&#39;t website gurus.</p>
+
+<p>It really, really sucks when your budget can no longer support the fast hosting required to support such a complex system while maintaining a decent response time (key for e-commerce and SEO).</p>
+
+<p>There comes a point when <em>good enough</em> isn&#39;t good enough. That point came for my business when I wanted more meaningful data collection to fuel my marketing efforts. I needed to really fine tune, do A/B testing and more. My WordPress system became too cumbersome. I couldn&#39;t re-build from scratch without losing too many features that were essential.</p>
+
+<h2>The Arguement for Rolling Your Own</h2>
+
+<p>While the business didn&#39;t outlive my legacy WordPress system, I still knew I wanted a home online. I sure as hell wasn&#39;t going to just throw up another WordPress (or Square Space or Blogger or whatever) website. I certainly didn&#39;t want to pay big hosting fees or even that $5/hour VA when no revenue was coming in.</p>
+
+<p>I won&#39;t lie, losing my business still stings even after a year has passed. But, there are some liberating aspects. At least now, I don&#39;t have to use WordPress.</p>
+
+<p>Fuck it - I can go ahead and write my own HTML and CSS code and post it however I like. No worrying about SEO or automatically spamming Twitter or any of it.</p>
+
+<p>A blog doesn&#39;t need a plug-in system, a database, a PHP powered presentation system or any of it. A blog only needs a text file that people can read and link to with a web browser. If the text file is formatted with HTML and CSS then <strong>Big Bonus</strong>!</p>
+
+<h2>So Here is My System</h2>
+
+<p>Without a business to worry about, I&#39;m free to worry about the trivial things like building a website. This website in fact. There isn&#39;t nothing about this website that can&#39;t be recreated with a text editor, but I do have a system that builds the text for my website (I&#39;m not insane after all).</p>
+
+<h3>Values</h3>
+
+<p>I want to make the user experience be the driving force behind the design of this website. In many ways, I align and am inspired by this blogger Matt Gemmell (see this article <a href="http://mattgemmell.com/respect-metrics/">Matt Gemell - Respect Metrics</a>).</p>
+
+<p>For me, it&#39;s not about any high minded ideals though. I honestly just hate that everything on the internet has to be monitized for tiny amounts of money ruining the entire experience. I hate ads and I really hate pop-overs. My site is going to be for me as a writer and you as a reader. <strong>Content first, as few distractions as possible.</strong></p>
+
+<h3>Implementation</h3>
+
+<p>At it&#39;s core, this website really is just HTML and CSS files arranged in directories on my web hosting provider. You can see the current state of the website by looking at the GitHub repository where I keep it:</p>
+
+<p><a href="https://github.com/MattjCamp/R-Blog-Builder/tree/master/Website/Staged">Staged @MattjCamp Website</a></p>
+
+<h3>Workflow</h3>
+
+<p>I do have a system in place for writing and publishing new articles. It involved writing the blog post in markdown and storing it in a folder named <strong>Content/Blog</strong>. You can see this as well in the repository above if you look around a little.</p>
+
+<p>Each blog article gets it&#39;s own folder with an images directory and a place to put custom css. Usually, the css simply points to the css file in the parent folder.</p>
+
+<p>The content is always stored in a file named <strong>content.md</strong>. There is also a content.md file in the blog parent directory that I will update with a link to the new blog post.</p>
+
+<p>As I&#39;m writing the blog post, I use scripts to convert the markdown and add the new post to a local version of the website I have running on my Mac. The scripts are in <strong>R</strong> because that&#39;s what I&#39;m learning right now and because R programming doesn&#39;t have all the baggage that an application programming language like C# or Swift would have.</p>
+
+<p>The R scripts use a templating system where the core HTML structure is stored (this part is sort of like WordPress sigh, but they got lots of things right after all&hellip;). Take a look at the <strong>Template</strong> folder to see what these look like. They are simple on purpose and I wanted a straightforward way to change the presentation as needed.</p>
+
+<p>Here is all the R code that I used to build this website:</p>
+
+<p><a href="https://github.com/MattjCamp/R-Blog-Builder">R Blog Builder</a></p>
+
+<p>Look, I know it&#39;s not really pretty or particulary automated. It&#39;s in R, but the code is really just text manipulation and calling the R markdown package. I&#39;m sure you could do the same thing in your current language of choice.</p>
+
+<p>If you were to try and use this code, you would want to open the <strong>render-all.R</strong> file and replace the lines with the content you were rendering. I recommending using <strong><a href="http://www.rstudio.com/products/rstudio/download/">RStudio</a></strong> while working on R.</p>
+
+<h2>Thoughts</h2>
+
+<p>So, does this work for my personal blog. Sure. It loads fast and reliably for users even though I only have a cheap commodity hosting package. I can control the content and every page can look the way I want it. I plan on publishing books here and more and it would all work for. At least as far as I can tell.</p>
+
+<p>Maybe you have another opinion. If so, I want to know&hellip;</p>
+
 
 <br>
 
