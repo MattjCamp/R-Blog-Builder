@@ -1,3 +1,11 @@
+<a href="why-i-am-building-my-own-blog-engine/"><img id="leftimage" src="why-i-am-building-my-own-blog-engine/images/blog.jpg" width=100pt></a>
+
+[Why I'm Writing My Own Blogging Engine](why-i-am-building-my-own-blog-engine/)
+
+Against the advice of almost everyone online business guru out there, I'm building my own blogging engine.  [Here's why...](why-i-am-building-my-own-blog-engine/)
+
+<br/><br/><hr/>
+
 <a href="Swift-Extensions/"><img id="leftimage" src="Swift-Extensions/images/pileofplussigns.jpg" width=100pt></a>
 
 [Swift Extensions](Swift-Extensions/)

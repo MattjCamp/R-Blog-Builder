@@ -1,13 +1,8 @@
 source('render.R', echo=FALSE)
 
-# # top level
-# render(template = "", topic = "")
-# 
-# # second deep levels
 render(template = "blog/", "blog/")
-# 
-# # third deep levels
-# 
-# #blog posts
-# 
-render(template = "blog/blog-post/", topic = "blog/test/")
+ 
+# blog posts
+
+render(template = "blog/blog-post/", topic = "blog/why-i-am-building-my-own-blog-engine/")
+render(template = "blog/blog-post/", topic = "blog/why-you-should-avoid-seo")

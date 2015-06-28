@@ -71,6 +71,7 @@ index <- applyTemplate(index, "navigation.top", template.dir = template.dir)
 index <- applyTemplate(index, "title", template.dir = template.dir)
 index <- applyTemplate(index, "title.head", template.dir = template.dir)
 index <- applyTemplate(index, "content", isMarkDown = TRUE, template.dir = template.dir)
+index <- applyTemplate(index, "comments", template.dir = template.dir)
 
 write(index, file = staged.file)
 
