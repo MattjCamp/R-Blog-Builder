@@ -1,3 +1,16 @@
+<a href="data-science-certificate-program/"><img id="leftimage" src="data-science-certificate-program/images/ds-venn.png" width=100pt></a>
+
+[Coursera Data Science Certificate](data-science-certificate-program/)
+
+It's been 6 years since I left my career. Since then, it has been renamed to 
+*Data Science* and has received a serious makeover. So I've decided to take
+an online certification course in this. Stay tuned for my notes and 
+thoughts about the class and more.
+
+[Find out more...](data-science-certificate-program/)
+
+<hr/>
+
 <a href="why-i-am-building-my-own-blog-engine/"><img id="leftimage" src="why-i-am-building-my-own-blog-engine/images/blog.jpg" width=100pt></a>
 
 [Why I'm Writing My Own Blogging Engine](why-i-am-building-my-own-blog-engine/)
@@ -35,6 +48,3 @@ Way back on November 25th, 2008 I left my 9-5 job as a Statistical Programmer to
 Over the past almost six years I've had some incredible experiences and I've done things I never thought was possible in a million years. 
 
 I've published books, traveled all over the world to teach and ran an indie software business. But, like many things my business has reached the end of it's lifecycle.  [MORE](end-of-an-indie/)
-
-
-

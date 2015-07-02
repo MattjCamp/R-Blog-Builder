@@ -5,6 +5,11 @@
   <title>@MattjCamp Blog</title>
   <link>http://mattjcamp.com</link>
   <description>Matt Campbell's Blog and Website</description>
+      <item>
+    <title>Data Science Certificate Program</title>
+    <link>http://mattjcamp.com/blog/data-science-certificate-program/</link>
+    <description>It's been 6 years since I left my career. Since then, it has been renamed to Data Science and has received a serious makeover. So I've decided to take an online certification course in this. Stay tuned for my notes and thoughts about the class and more.</description>
+  </item>
     <item>
     <title>Why I'm Writing My Own Blogging Engine</title>
     <link>http://mattjcamp.com/blog/why-i-am-building-my-own-blog-engine/</link>
