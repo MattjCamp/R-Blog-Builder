@@ -1,4 +1,4 @@
-render <- function(template, topic){
+render <- function(template, topic, ready.to.publish=FALSE){
 
 library(stringr)
 library(markdown)
@@ -71,7 +71,8 @@ index <- applyTemplate(index, "navigation.top", template.dir = template.dir)
 index <- applyTemplate(index, "title", template.dir = template.dir)
 index <- applyTemplate(index, "title.head", template.dir = template.dir)
 index <- applyTemplate(index, "content", isMarkDown = TRUE, template.dir = template.dir)
-index <- applyTemplate(index, "comments", template.dir = template.dir)
+if (ready.to.publish==TRUE)
+  index <- applyTemplate(index, "comments", template.dir = template.dir)
 
 write(index, file = staged.file)
 

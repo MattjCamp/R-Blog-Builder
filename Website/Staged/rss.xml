@@ -5,7 +5,29 @@
   <title>@MattjCamp Blog</title>
   <link>http://mattjcamp.com</link>
   <description>Matt Campbell's Blog and Website</description>
-      <item>
+     <item>
+    <title>Designing Tasting Notes</title>
+    <link>http://mattjcamp.com/blog/designing-tasting-notes/</link>
+    <description>This week I put some thought into how Tasting Notes should look and feel. I'm tempted to keep the app exactly the same as before, but just upgraded for Swift and the other tools in the latest version of Xcode. But, here's the thing…</description>
+  </item>
+   <item>
+    <title>How to Make an iPhone App</title>
+    <link>http://mattjcamp.com/blog/how-to-make-an-iphone-app/</link>
+    <description>Early this week, I thought I would sit down and bang out a revised version of my iPhone App Tasting Notes. LOL. This turned out to be a lot harder than expected. In an ironic twist of fate, I'm now googling the same keywords that I used to own to try and figure out how to build my app.</description>
+  </item>
+   <item>
+    <title>Tasting Notes 4 Kickoff</title>
+    <link>http://mattjcamp.com/blog/tasting-notes-4-developer-kickoff/</link>
+    <description>Now that I decided that I do want my app back on the App Store, I have to figure how to get this done. And I want to explore some of the implementation possibilities. Just how much of a reboot is this going to be?</description>
+   </item>
+   <item>
+    <title>Been Knocked Down Hard, But …</title>
+    <link>http://mattjcamp.com/blog/guys-im-debating-a-reboot/</link>
+    <description>I wanted to write about getting back into iPhone development, but I ended up talking about the harsh reality of achieving your dreams only to have them evaporate right before your eyes.
+
+I touch on the some of the darker elements of the so-called Lifestyle Business world. You may know these types of businesses as Internet Business or Online Business. I'm also sharing my plans on how to recover the best parts of my online business from the depths that I sank it to.</description>
+  </item>
+   <item>
     <title>Data Science Certificate Program</title>
     <link>http://mattjcamp.com/blog/data-science-certificate-program/</link>
     <description>It's been 6 years since I left my career. Since then, it has been renamed to Data Science and has received a serious makeover. So I've decided to take an online certification course in this. Stay tuned for my notes and thoughts about the class and more.</description>
