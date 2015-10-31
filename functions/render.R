@@ -11,14 +11,22 @@ staged.dir <- sprintf("%s/Website/Staged/", getwd())
 content.dir <- sprintf("%s%s/", content.dir, topic)
 template.dir <- sprintf("%s%s/", template.dir, template)
 staged.dir <- sprintf("%s%s/", staged.dir, topic)
-content.dir <- str_replace_all(string = content.dir, pattern = "//", replacement = "/")
-staged.dir <- str_replace_all(string = staged.dir, pattern = "//", replacement = "/")
+content.dir <- str_replace_all(string = content.dir,
+                               pattern = "//",
+                               replacement = "/")
+staged.dir <- str_replace_all(string = staged.dir,
+                              pattern = "//",
+                              replacement = "/")
 content.file <- sprintf("%s%s", content.dir, "content.md")
 staged.file <- sprintf("%s%s", staged.dir, "index.html")
 
 # functions ---------------------------------------------------------------
 
-applyTemplate <- function(html, template, isMarkDown = FALSE, template.dir, replacement = ""){
+applyTemplate <- function(html,
+                          template,
+                          isMarkDown = FALSE,
+                          template.dir,
+                          replacement = ""){
   
   if(replacement == ""){
     if (isMarkDown){
