@@ -1,0 +1,25 @@
+---
+title: "Development History"
+author: '@MattjCamp'
+output: html_document
+---
+
+## Overview
+
+I'm using this as a shell to help test and look at the
+new functions I'm building. This will be heavily revised.s
+
+## Load Dependencies
+
+Here is one place to load all the code that we will need.
+
+```{r}
+
+source('functions/directory.locations.R', echo=FALSE)
+
+dirs <- directory.locations(getwd())
+
+dirs
+
+```
+
