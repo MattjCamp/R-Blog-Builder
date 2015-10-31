@@ -15,3 +15,12 @@ Each page in the blog will have a template folder where the base HTML code will 
 ## Tools
 
 This project is created using R 3.1.1 and R Studio .98.
+
+## Update 10-31-2015
+
+Happy Halloween! So, today I'm spending a bit more time on this. I'm removing
+my personal blog content to make R-Blog-Builder more generalizable. Next I'm 
+going to refactor the Render function to make it more clear.
+
+So, I hope to be able to automate most of the process of posting new
+blog posts. I want to remove some of the friction involved with this process.
