@@ -15,9 +15,11 @@ Here is one place to load all the code that we will need.
 
 ```{r}
 
-source('functions/directory.locations.R', echo=FALSE)
+source('functions/locations.R', echo = FALSE)
 
-dirs <- directory.locations(getwd())
+dirs <- locations(getwd(),
+                  parent.topic.dir = "blog",
+                  topic.dir = "much-todo-about-something")
 
 dirs
 
