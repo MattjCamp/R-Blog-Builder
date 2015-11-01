@@ -11,25 +11,28 @@ locations <- function(website.directory,
   
   # Get top most directories
   
-  me$content.dir <- sprintf("%s/Website/Content/",
+  me$content.root.dir <- sprintf("%s/Website/Content/",
                             website.directory)
-  me$template.dir <- sprintf("%s/Website/Template/",
+  me$template.root.dir <- sprintf("%s/Website/Template/",
                              website.directory)
-  me$staged.dir <- sprintf("%s/Website/Staged/",
+  me$staged.root.dir <- sprintf("%s/Website/Staged/",
                            website.directory)
+  me$content.root.file <- sprintf("%scontent.md",
+                                    me$content.root.dir)
+  me$staged.root.file <- sprintf("%sindex.html",
+                                   me$staged.root.dir)
   
   # Get parent directories
   
   if (is.null(parent.topic.dir) == FALSE) {
     
     me$content.parent.dir <- sprintf("%s%s/",
-                                     me$content.dir,
+                                     me$content.root.dir,
                                      parent.topic.dir)
-    me$template.parent.dir <- sprintf("%s%s/",
-                                     me$template.dir,
-                                     parent.topic.dir)
+    me$template.parent.dir <- sprintf("%stopics/",
+                                     me$template.root.dir)
     me$staged.parent.dir <- sprintf("%s%s/",
-                                   me$staged.dir,
+                                   me$staged.root.dir,
                                    parent.topic.dir)
     me$content.parent.file <- sprintf("%scontent.md",
                                       me$content.parent.dir)
@@ -44,7 +47,7 @@ locations <- function(website.directory,
                                      topic.dir)
     me$template.topic.dir <- sprintf("%s%s/",
                                       me$template.parent.dir,
-                                      "post")
+                                      "topic")
     me$staged.topic.dir <- sprintf("%s%s/",
                                     me$staged.parent.dir,
                                     topic.dir)
