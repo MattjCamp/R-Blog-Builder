@@ -1,11 +1,9 @@
+source('functions/locations.R', echo = FALSE)
+source('functions/apply.template.R', echo = FALSE)
 
 test.locations <- function(){
   
-  source('functions/locations.R', echo = FALSE)
-  
-  website.directory <- "/temp"
-  
-  dirs <- locations(website.directory = website.directory,
+  dirs <- locations(website.directory = "/temp",
                     parent.topic.dir = "blog",
                     topic.dir = "topic")
   
@@ -46,4 +44,25 @@ test.locations <- function(){
               current = "/temp/Website/Content/blog/topic/content.md")
   checkEquals(target = dirs$staged.topic.file,
               current = "/temp/Website/Staged/blog/topic/index.html")
+}
+
+test.apply.template <- function(){
+  
+  dirs <- locations(website.directory = getwd(),
+                    parent.topic.dir = "blog",
+                    topic.dir = "hello-world")
+  
+  html.text <- "Top Part %title.head%"
+  
+  index <- apply.template(html = html.text,
+                          template = "title.head",
+                          template.dir = dirs$template.root.dir)
+  
+  checkEquals(target = index,
+              current = "Top Part <title>A Blog @ blog.com</title>")
+  
+  index
+  
+
+  
 }
