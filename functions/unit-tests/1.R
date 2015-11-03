@@ -58,6 +58,26 @@ test.locations <- function(){
   
 }
 
+test.locations.with.missing <- function(){
+  
+  dirs <- locations(website.directory = "/temp",
+                    parent.topic.dir = NULL,
+                    topic.dir = "about")
+  
+  checkEquals(target = dirs$content.root.dir,
+              current = "/temp/Website/Content/")
+  
+  exists(x = dirs$content.parent.dir)
+  
+  checkEquals(target = dirs$content.topic.dir,
+              current = "/temp/Website/Content/about/")
+  checkEquals(target = dirs$template.topic.dir,
+              current = "/temp/Website/Template/about/")
+  checkEquals(target = dirs$staged.topic.dir,
+              current = "/temp/Website/Staged/about/")
+  
+}
+
 test.apply.template <- function(){
   
   dirs <- locations(website.directory = getwd(),

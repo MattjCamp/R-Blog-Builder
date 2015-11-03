@@ -52,23 +52,40 @@ locations <- function(website.directory,
 
   if (is.null(topic.dir) == FALSE) {
     
-    me$content.topic.dir <- sprintf("%s%s/",
-                                     me$content.parent.dir,
+    if (is.null(parent.topic.dir) == FALSE) {
+    
+      me$content.topic.dir <- sprintf("%s%s/",
+                                       me$content.parent.dir,
+                                       topic.dir)
+      me$template.topic.dir <- sprintf("%s%s/",
+                                        me$template.parent.dir,
+                                        "topic")
+      me$staged.topic.dir <- sprintf("%s%s/",
+                                      me$staged.parent.dir,
+                                      topic.dir)
+
+    } else {
+      
+      me$content.topic.dir <- sprintf("%s%s/",
+                                      me$content.root.dir,
+                                      topic.dir)
+      me$template.topic.dir <- sprintf("%s%s/",
+                                       me$template.root.dir,
+                                       "topic")
+      me$staged.topic.dir <- sprintf("%s%s/",
+                                     me$staged.root.dir,
                                      topic.dir)
-    me$template.topic.dir <- sprintf("%s%s/",
-                                      me$template.parent.dir,
-                                      "topic")
-    me$staged.topic.dir <- sprintf("%s%s/",
-                                    me$staged.parent.dir,
-                                    topic.dir)
-    me$content.topic.images.dir <- sprintf("%simages",
-                                            me$content.topic.dir)
-    me$staged.topic.images.dir <- sprintf("%simages",
-                                           me$staged.topic.dir)
-    me$content.topic.file <- sprintf("%scontent.md",
-                                     me$content.topic.dir)
-    me$staged.topic.file <- sprintf("%sindex.html",
-                                    me$staged.topic.dir)
+      
+    }
+    
+      me$content.topic.images.dir <- sprintf("%simages",
+                                              me$content.topic.dir)
+      me$staged.topic.images.dir <- sprintf("%simages",
+                                             me$staged.topic.dir)
+      me$content.topic.file <- sprintf("%scontent.md",
+                                       me$content.topic.dir)
+      me$staged.topic.file <- sprintf("%sindex.html",
+                                      me$staged.topic.dir)
   }
   
   class(me) <- append(class(me),"r.blog.builder.directory.locations")
