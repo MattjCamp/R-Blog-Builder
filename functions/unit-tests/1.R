@@ -67,8 +67,6 @@ test.locations.with.missing <- function(){
   checkEquals(target = dirs$content.root.dir,
               current = "/temp/Website/Content/")
   
-  exists(x = dirs$content.parent.dir)
-  
   checkEquals(target = dirs$content.topic.dir,
               current = "/temp/Website/Content/about/")
   checkEquals(target = dirs$template.topic.dir,

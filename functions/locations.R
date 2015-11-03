@@ -6,8 +6,6 @@
 locations <- function(website.directory,
                       parent.topic.dir = NULL,
                       topic.dir = NULL){
-  
-  library(stringr)
 
   me <- list()
   

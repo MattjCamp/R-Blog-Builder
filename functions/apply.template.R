@@ -4,6 +4,8 @@ apply.template <- function(html,
                            isMarkDown = FALSE,
                            template.dir,
                            replacement = ""){
+  library(stringr)
+  library(markdown)
   
   if (replacement == "") {
     if (isMarkDown) {
