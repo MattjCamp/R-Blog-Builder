@@ -1,5 +1,7 @@
 source('functions/locations.R', echo = FALSE)
 source('functions/apply.template.R', echo = FALSE)
+source('functions/find.template.R', echo = FALSE)
+source('functions/write.page.R', echo = FALSE)
 
 test.locations <- function(){
   
@@ -70,7 +72,7 @@ test.locations.with.missing <- function(){
   checkEquals(target = dirs$content.topic.dir,
               current = "/temp/Website/Content/about/")
   checkEquals(target = dirs$template.topic.dir,
-              current = "/temp/Website/Template/about/")
+              current = "/temp/Website/Template/topic/")
   checkEquals(target = dirs$staged.topic.dir,
               current = "/temp/Website/Staged/about/")
   
@@ -86,13 +88,43 @@ test.apply.template <- function(){
   
   index <- apply.template(html = html.text,
                           template = "title.head",
-                          template.dir = dirs$template.root.dir)
+                          template.dir = dirs$template.topic.dir)
   
   checkEquals(target = index,
               current = "Top Part <title>A Blog @ blog.com</title>")
-  
-  index
-  
+}
 
+test.find.template <- function(){
   
+  dirs <- locations(website.directory = getwd(),
+                    parent.topic.dir = "blog",
+                    topic.dir = "topic")
+  
+  template <- "title.head"
+  
+  checkEquals(find.template(dirs$template.topic.dir, template),
+              "/Users/matt/Dropbox/Code/Tools/R-Blog-Builder/Website/Template/title.head.html")
+  
+  # Test root
+  
+  dirs <- locations(website.directory = getwd(),
+                    parent.topic.dir = "",
+                    topic.dir = "")
+  
+  checkEquals(find.template(dirs$template.root.dir, template),
+              "/Users/matt/Dropbox/Code/Tools/R-Blog-Builder/Website/Template/title.head.html")
+  
+}
+
+test.write.page <- function(){
+  
+  proj.dir <- getwd()
+  dirs <- locations(website.directory = proj.dir,
+                    parent.topic.dir = "",
+                    topic.dir = "")
+  
+  write.page(template.dir = dirs$template.root.dir,
+             staged.dir = dirs$staged.root.dir,
+             content.file = dirs$content.root.file,
+             include.comment.section = FALSE)
 }

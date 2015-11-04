@@ -2,6 +2,9 @@
 find.template <- function(dir, template){
   
   file.name <- sprintf("%s/%s.html", dir, template)
+  file.name <- str_replace_all(string = file.name,
+                               pattern = "//",
+                               replacement = "/")
   
   if (file.exists(file.name))
     return(file.name)
@@ -13,10 +16,5 @@ find.template <- function(dir, template){
     }
   }
 }
-
-start.dir <- "/Users/matt/Dropbox/Code/Tools/R-Blog-Builder/Website/Template/topics/topic"
-template <- "title"
-
-find.template(start.dir, template)
 
 
