@@ -1,18 +1,41 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		%title.head%
-		<link rel="stylesheet" type="text/css" href="style.css" media="screen" />
-		<link rel="icon" href="favicon.png" type="image/png" />
-		<link rel="shortcut icon" href="favicon.ico" />	
-	</head>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Add Blog Title</title>
+	<link rel="stylesheet" type="text/css" href="style.css" media="screen" />
+	<link rel="icon" href="favicon.png" type="image/png" />
+	<link rel="shortcut icon" href="favicon.ico" />
+	<meta name="description" content="Add Description">
+</head>
+<body>
 	
-<body><div id="container">
+<div id="wholepage">
+	
+	<div id="navigation_bar">
+		
+		%title%
+		
+		%navigation.top%
+		
+	</div>
+	
+	<div id="pagecontent">
+		
+		%content%
+		
+	</div>
+	
+	<div id="sidebar">
+		<div id="sidebar_item">
+			<p>%sidebar.newsletter%</p>
+		</div>
+	</div>
 
-%title%
+	<div id="bottom_bar">
+		%bottom.bar%
+	</div>
 
-%navigation.top%
-
-%content%
-
-</div></body></html>
+</div>
+	
+</body></html>

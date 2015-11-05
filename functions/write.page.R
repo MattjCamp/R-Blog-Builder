@@ -1,8 +1,4 @@
 
-source('functions/apply.template.R', echo = FALSE)
-source('functions/find.template.R', echo = FALSE)
-source('functions/apply.content.markdown.R', echo = FALSE)
-
 write.page <- function(template.dir,
                        staged.dir,
                        content.file,
@@ -26,6 +22,14 @@ write.page <- function(template.dir,
                          template = "title.head",
                          template.dir = template.dir)
   
+  index <- apply.template(html = index,
+                          template = "sidebar.newsletter",
+                          template.dir = template.dir)
+  
+  index <- apply.template(html = index,
+                          template = "bottom.bar",
+                          template.dir = template.dir)
+  
   index <- apply.content.markdown(html = index,
                                   content.file = content.file)
   
@@ -33,6 +37,11 @@ write.page <- function(template.dir,
     index <- apply.template(html = index,
                             template = "comments",
                             template.dir = template.dir)
+  
+  file.copy(from = find.file.in.templates(dir = template.dir,
+                                          file.name = "style.css"),
+            to = sprintf("%s%s", staged.dir, "style.css"),
+            overwrite = TRUE)
   
   staged.file <- sprintf("%s%s", staged.dir, "index.html")
   

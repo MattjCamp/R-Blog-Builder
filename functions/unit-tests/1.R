@@ -1,7 +1,12 @@
+
+library(stringr)
+
 source('functions/locations.R', echo = FALSE)
 source('functions/apply.template.R', echo = FALSE)
 source('functions/find.template.R', echo = FALSE)
+source('functions/find.file.in.templates.R', echo = FALSE)
 source('functions/write.page.R', echo = FALSE)
+source('functions/apply.content.markdown.R', echo = FALSE)
 
 test.locations <- function(){
   

@@ -9,7 +9,4 @@ copy.images.styles <- function(locations){
               overwrite = TRUE)
   }
   
-  file.copy(from = sprintf("%s%s", locations$template.root.dir, "style.css"),
-            to = sprintf("%s%s", locations$staged.root.dir, "style.css"))
-
 }
