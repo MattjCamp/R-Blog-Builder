@@ -1,4 +1,3 @@
-# TO DO : need to handle when parent is NULL but topic is not NULL
 
 # Figures out directory and file locations
 # for the topic we are working on
@@ -17,14 +16,6 @@ locations <- function(website.directory,
                              website.directory)
   me$staged.root.dir <- sprintf("%s/Website/Staged/",
                            website.directory)
-  me$content.root.images.dir <- sprintf("%simages",
-                                        me$content.root.dir)
-  me$staged.root.images.dir <- sprintf("%simages",
-                                        me$staged.root.dir)
-  me$content.root.file <- sprintf("%scontent.md",
-                                    me$content.root.dir)
-  me$staged.root.file <- sprintf("%sindex.html",
-                                   me$staged.root.dir)
   
   # Get parent directories
   
@@ -38,14 +29,6 @@ locations <- function(website.directory,
     me$staged.parent.dir <- sprintf("%s%s/",
                                    me$staged.root.dir,
                                    parent.topic.dir)
-    me$content.parent.images.dir <- sprintf("%simages",
-                                          me$content.parent.dir)
-    me$staged.parent.images.dir <- sprintf("%simages",
-                                         me$staged.parent.dir)
-    me$content.parent.file <- sprintf("%scontent.md",
-                                      me$content.parent.dir)
-    me$staged.parent.file <- sprintf("%sindex.html",
-                                     me$staged.parent.dir)
   }
 
   if (is.null(topic.dir) == FALSE) {
@@ -76,17 +59,7 @@ locations <- function(website.directory,
       
     }
     
-      me$content.topic.images.dir <- sprintf("%simages",
-                                              me$content.topic.dir)
-      me$staged.topic.images.dir <- sprintf("%simages",
-                                             me$staged.topic.dir)
-      me$content.topic.file <- sprintf("%scontent.md",
-                                       me$content.topic.dir)
-      me$staged.topic.file <- sprintf("%sindex.html",
-                                      me$staged.topic.dir)
   }
-  
-  class(me) <- append(class(me),"r.blog.builder.directory.locations")
   
   return(me)
   
