@@ -100,6 +100,9 @@ test.find.template <- function(){
 test.write.page <- function(){
   
   proj.dir <- getwd()
+  
+  # Build Website
+  
   dirs <- locations(website.directory = proj.dir,
                     parent.topic.dir = "blog",
                     topic.dir = "blog-post")
