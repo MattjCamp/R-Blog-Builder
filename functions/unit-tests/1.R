@@ -104,11 +104,20 @@ test.write.page <- function(){
                     parent.topic.dir = "blog",
                     topic.dir = "blog-post")
   
+  # Root
+  
   write.page(template.dir = dirs$template.root.dir,
              staged.dir = dirs$staged.root.dir,
              content.dir = dirs$content.root.dir,
              include.comment.section = FALSE)
   
+  # Parent
+  
+  write.page(template.dir = dirs$template.parent.dir,
+             staged.dir = dirs$staged.parent.dir,
+             content.dir = dirs$content.parent.dir,
+             include.comment.section = FALSE)
+  # Post
   
   write.page(template.dir = dirs$template.topic.dir,
              staged.dir = dirs$staged.topic.dir,
