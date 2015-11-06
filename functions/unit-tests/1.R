@@ -1,5 +1,6 @@
 
 library(stringr)
+library(tools)
 
 source('functions/locations.R', echo = FALSE)
 source('functions/apply.template.R', echo = FALSE)
