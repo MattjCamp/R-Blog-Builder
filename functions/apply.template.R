@@ -1,17 +1,17 @@
   
 apply.template <- function(html,
                            template,
-                           template.dir,
-                           replacement = ""){
+                           template.dir = NULL,
+                           content.to.add = ""){
   library(stringr)
   
-  if (replacement == "") {
+  if (!is.null(template.dir)) {
     t.file <- find.template(dir = template.dir,
                             template = template)
     content <- readChar(t.file, file.info(t.file)$size)
     pattern <- sprintf("%%%s%%", template)
   }else{
-    content <- replacement
+    content <- content.to.add
     pattern <- sprintf("%%%s%%", template)
   }
   
