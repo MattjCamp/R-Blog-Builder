@@ -67,6 +67,8 @@ write.page <- function(template.dir,
                           template = "bottom.bar",
                           template.dir = template.dir)
   
+  # Fill in markdown content
+  
   content.file <- sprintf("%scontent.md",
                           content.dir)
   
@@ -82,6 +84,20 @@ write.page <- function(template.dir,
   index <- apply.template(html = index,
                           template = "content.image",
                           content.to.add  = basename(content.dir))
+  
+  # Add Meta Tags
+  
+  index <- apply.plain.text.from.file(html = index,
+                                      content.dir = content.dir,
+                                      file.name = "author.txt")
+  
+  index <- apply.plain.text.from.file(html = index,
+                                      content.dir = content.dir,
+                                      file.name = "description.txt")
+  
+  index <- apply.plain.text.from.file(html = index,
+                                      content.dir = content.dir,
+                                      file.name = "keywords.txt")
   
   if (include.comment.section == TRUE)
     index <- apply.template(html = index,

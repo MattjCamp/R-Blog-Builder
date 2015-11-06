@@ -7,6 +7,8 @@ source('functions/find.template.R', echo = FALSE)
 source('functions/find.file.in.templates.R', echo = FALSE)
 source('functions/write.page.R', echo = FALSE)
 source('functions/apply.content.markdown.R', echo = FALSE)
+source('functions/build.website.R', echo = FALSE)
+source('functions/apply.plain.text.from.file.R', echo = FALSE)
 
 test.locations <- function(){
   
@@ -126,4 +128,10 @@ test.write.page <- function(){
              staged.dir = dirs$staged.topic.dir,
              content.dir = dirs$content.topic.dir,
              include.comment.section = FALSE)
+}
+
+test.build.website <- function(){
+  
+  build.website()
+  
 }

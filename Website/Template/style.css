@@ -7,15 +7,6 @@ a{
 	line-height:150%;
 }
 
-td a{
-	color:black;
-	text-decoration: none;
-}
-
-td a:hover {
-    color: blue;
-}
-
 pre {
 	overflow: auto;
 	word-wrap: normal;
@@ -59,13 +50,19 @@ blockquote{
 	font-size: 10pt;
 	font-weight: bold;
 	padding-right: 5pt;
+	text-decoration: none;
 }
-		
+
+#navigation_bar_item:hover {
+    color: blue;
+}
+	
 #navigation_bar_selected_item{
 	font-size: 10pt;
 	font-weight: bold;
 	color:blue;
 	padding-right: 5pt;
+	text-decoration: none;
 }
 
 #wholepage{
