@@ -8,8 +8,13 @@ apply.template <- function(html,
   if (!is.null(template.dir)) {
     t.file <- find.template(dir = template.dir,
                             template = template)
-    content <- readChar(t.file, file.info(t.file)$size)
-    pattern <- sprintf("%%%s%%", template)
+    if (!is.na(t.file)) {
+      content <- readChar(t.file, file.info(t.file)$size)
+      pattern <- sprintf("%%%s%%", template)
+    } else {
+      content <- ""
+      pattern <- sprintf("%%%s%%", "")
+    }
   }else{
     content <- content.to.add
     pattern <- sprintf("%%%s%%", template)

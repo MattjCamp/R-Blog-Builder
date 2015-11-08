@@ -10,7 +10,7 @@ find.template <- function(dir, template){
     return(file.name)
   else {  
     if (basename(dir) == "Website") {
-      return("NULL")
+      return(NA)
     } else {
       return(find.template(dirname(dir), template))
     }

@@ -64,7 +64,7 @@ write.page <- function(template.dir,
                           template.dir = template.dir)
   
   index <- apply.template(html = index,
-                          template = "bottom.bar",
+                          template = "disclosures",
                           template.dir = template.dir)
   
   # Fill in markdown content
