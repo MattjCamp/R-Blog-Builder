@@ -99,6 +99,10 @@ write.page <- function(template.dir,
                                       content.dir = content.dir,
                                       file.name = "keywords.txt")
   
+  index <- apply.plain.text.from.file(html = index,
+                                      content.dir = content.dir,
+                                      file.name = "title.head.txt")
+  
   if (include.comment.section == TRUE)
     index <- apply.template(html = index,
                             template = "comments",
