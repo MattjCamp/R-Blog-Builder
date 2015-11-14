@@ -32,13 +32,19 @@ write.page <- function(template.dir,
               overwrite = TRUE)
   }
 
-  # Copy Styles
+  # Copy Styles, Sitemaps
   
   file.copy(from = find.file.in.templates(dir = template.dir,
                                           file.name = "style.css"),
             to = sprintf("%s%s", staged.dir, "style.css"),
             overwrite = TRUE)
+
+  file.copy(from = find.file.in.templates(dir = template.dir,
+                                          file.name = "sitemap.xml"),
+            to = sprintf("%s%s", staged.dir, "sitemap.xml"),
+            overwrite = TRUE)
   
+    
   # Compose page
   
   page.template <- find.template(dir = template.dir, 
