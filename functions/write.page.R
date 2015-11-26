@@ -87,6 +87,8 @@ write.page <- function(template.dir,
                             content.to.add  = sprintf("Add content to %s markdown file.",
                                                   content.file))
   
+  # Put title image in
+  
   index <- apply.template(html = index,
                           template = "content.image",
                           content.to.add  = basename(content.dir))
