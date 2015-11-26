@@ -89,9 +89,40 @@ write.page <- function(template.dir,
   
   # Put title image in
   
-  index <- apply.template(html = index,
-                          template = "content.image",
-                          content.to.add  = basename(content.dir))
+  real.image.file.name <- NULL
+  
+  test.file.name <- sprintf("%simages/%s.jpg",
+                            content.dir,
+                            basename(content.dir))
+  
+  if (file.exists(test.file.name))
+    real.image.file.name <- sprintf("images/%s.jpg",
+                                    basename(content.dir))
+  
+  test.file.name <- sprintf("%simages/%s.png",
+                            content.dir,
+                            basename(content.dir))
+  
+  if (file.exists(test.file.name))
+    real.image.file.name <- sprintf("images/%s.png",
+                                    basename(content.dir))
+  
+  if (!is.null(real.image.file.name)) {
+  
+    insert.image <- sprintf("<p><img  id='image_title' src = '%s' alt = '%s'></p>",
+                            real.image.file.name,
+                            basename(content.dir))
+    
+    index <- apply.template(html = index,
+                            template = "content.image",
+                            content.to.add  = insert.image)
+  } else {
+    
+    index <- apply.template(html = index,
+                            template = "content.image",
+                            content.to.add  = "")
+    
+  }
   
   # Add Meta Tags
   
