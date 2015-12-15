@@ -31,14 +31,21 @@ write.page <- function(template.dir,
               to = staged.images.dir,
               overwrite = TRUE)
   }
-
-  # Copy Styles, Sitemaps
   
-  file.copy(from = find.file.in.templates(dir = template.dir,
-                                          file.name = "style.css"),
+  # Copy correct CSS file
+  
+  css.file <- sprintf("%s%s", content.dir, "style.css")
+  
+  if (!file.exists(css.file))
+    css.file <- find.file.in.templates(dir = template.dir,
+                                       file.name = "style.css")
+  
+  file.copy(from = css.file,
             to = sprintf("%s%s", staged.dir, "style.css"),
             overwrite = TRUE)
-
+  
+  # Copy sitemap
+  
   file.copy(from = find.file.in.templates(dir = template.dir,
                                           file.name = "sitemap.xml"),
             to = sprintf("%s%s", staged.dir, "sitemap.xml"),
