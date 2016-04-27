@@ -8,9 +8,10 @@ apply.content.markdown <- function(html,
   content <- renderMarkdown(file = content.file)
   pattern <- content.pattern
 
-  html <- str_replace_all(string = html, 
-                          pattern = pattern,
-                          replacement = content)
+  html <- gsub(x = html, 
+               pattern = pattern,
+               replacement = content)
+  
   
   return(html)
   
