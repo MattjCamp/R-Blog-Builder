@@ -1,10 +1,13 @@
 
+# BUILDS ONE PAGE ON A WEBSITE
+# SUBSTITUTES CONTENT.MD INTO MAIN CONTENT AREA
+
 write.page <- function(template.dir,
                        staged.dir,
                        content.dir,
                        include.comment.section = FALSE){
   
-  # Build directories if needed
+  # BUILD DIRECTORIES
   
   if (!file.exists(staged.dir))
     dir.create(path = staged.dir,
@@ -19,7 +22,7 @@ write.page <- function(template.dir,
                showWarnings = TRUE,
                recursive = TRUE)
   
-  # Copy Images
+  # IMAGES
   
   content.images.dir <- sprintf("%simages",
                                content.dir)
@@ -32,7 +35,7 @@ write.page <- function(template.dir,
               overwrite = TRUE)
   }
   
-  # Copy correct CSS file
+  # CSS FILE
   
   css.file <- sprintf("%s%s", content.dir, "style.css")
   
@@ -44,15 +47,8 @@ write.page <- function(template.dir,
             to = sprintf("%s%s", staged.dir, "style.css"),
             overwrite = TRUE)
   
-  # Copy sitemap
-  
-  file.copy(from = find.file.in.templates(dir = template.dir,
-                                          file.name = "sitemap.xml"),
-            to = sprintf("%s%s", staged.dir, "sitemap.xml"),
-            overwrite = TRUE)
-  
-    
-  # Compose page
+  # REPLACE BLOCKS OF HTML IN INDEX FROM HTML FILES
+  # LOCATED IN THE MATCHING TEMPLATE DIRECTORY
   
   page.template <- find.template(dir = template.dir, 
                                  template = "index")
@@ -80,7 +76,8 @@ write.page <- function(template.dir,
                           template = "disclosures",
                           template.dir = template.dir)
   
-  # Fill in markdown content
+  # TRANSFORM CONTENT FROM CONTENT.MD AND PASTE INTO
+  # INDEX.HTML FILE
   
   content.file <- sprintf("%scontent.md",
                           content.dir)
@@ -94,7 +91,7 @@ write.page <- function(template.dir,
                             content.to.add  = sprintf("Add content to %s markdown file.",
                                                   content.file))
   
-  # Put title image in
+  # ADD MAIN IMAGE AUTOMATICALLY
   
   real.image.file.name <- NULL
   
@@ -131,7 +128,8 @@ write.page <- function(template.dir,
     
   }
   
-  # Add Meta Tags
+  # COPY META TAG CONTENT FROM TXT FILES LOCATED
+  # IN THE CONTENT DIRECTORY
   
   index <- apply.plain.text.from.file(html = index,
                                       content.dir = content.dir,
@@ -148,6 +146,8 @@ write.page <- function(template.dir,
   index <- apply.plain.text.from.file(html = index,
                                       content.dir = content.dir,
                                       file.name = "title.head.txt")
+  
+  # PASTE CODE NEEDED FOR DISCUS COMMENTS
   
   if (include.comment.section == TRUE)
     index <- apply.template(html = index,
