@@ -69,7 +69,7 @@ write.page <- function(template.dir,
                          template.dir = template.dir)
   
   index <- apply.template(html = index,
-                          template = "sidebar.newsletter",
+                          template = "optin",
                           template.dir = template.dir)
   
   index <- apply.template(html = index,
